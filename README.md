@@ -1,4 +1,4 @@
-🚀 Introducing My SQL Query Optimization Series 🚀
+🚀 Introducing the SQL Query Optimization Series 🚀
 
 ![image](https://github.com/user-attachments/assets/24109f43-5171-437e-bfb6-15b82294e4ac)
 
