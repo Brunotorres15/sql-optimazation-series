@@ -1,13 +1,13 @@
-SELECT id_cliente, nome, sobrenome, email, total_pedidos
+SELECT id_client, first_name, last_name, email, total_orders
 FROM (
     SELECT 
-        c.id_cliente,
-        c.nome,
-        c.sobrenome,
+        c.id_client,
+        c.first_name,
+        c.last_name,
         c.email,
-        (SELECT SUM(p.valor_pedido) FROM pedidos p WHERE p.id_cliente = c.id_cliente) AS total_pedidos
-    FROM clientes c
-) pedidos_clientes
-WHERE total_pedidos > 1000
-ORDER BY total_pedidos DESC
+        (SELECT SUM(o.order_value) FROM orders o WHERE o.id_client = c.id_client) AS total_orders
+    FROM clients c
+) clients_orders
+WHERE total_orders > 1000
+ORDER BY total_orders DESC
 LIMIT 10;

@@ -1,11 +1,11 @@
-with sum_pedidos as (
-SELECT id_cliente, SUM(valor_pedido) as total_pedidos
-	FROM cap10.pedidos
-	GROUP BY id_cliente
-	having  SUM(valor_pedido) > 1000
+WITH sum_orders AS (
+    SELECT id_client, SUM(order_value) AS total_orders
+    FROM orders
+    GROUP BY id_client
+    HAVING SUM(order_value) > 1000
 )
-select c.id_cliente, c.nome, c.sobrenome, c.email, sp.total_pedidos
-from cap10.clientes c
-inner join sum_pedidos sp on c.id_cliente = sp.id_cliente
-ORDER BY total_pedidos DESC
+SELECT c.id_client, c.first_name, c.last_name, c.email, so.total_orders
+FROM clients c
+INNER JOIN sum_orders so ON c.id_client = so.id_client
+ORDER BY total_orders DESC
 LIMIT 10;
