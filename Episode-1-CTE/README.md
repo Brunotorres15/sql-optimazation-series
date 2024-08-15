@@ -1,7 +1,7 @@
 # ⚡ Part 1 - Using CTEs (Common Table Expressions) ⚡
 
 ### 📌 What is a CTE?
-*A CTE (Common Table Expression) is a way to create a "temporary table" within an SQL query. It simplifies the reading and organization of complex queries by allowing you to define a dataset with a temporary name that can be reused multiple times within the same query. This makes queries more readable and can improve performance by avoiding repetitive calculations.*
+*A CTE (Common Table Expression) is a way of naming a result set that can be referenced several times within a single query. It is defined using the WITH clause and exists only during query execution. Although it behaves like a temporary table in the context of the query in which it is used, the CTE does not create a physical table in the database and does not persist after the query has been executed.*
 
 **In this first example, let's compare two queries that fetch the top 10 customers with the highest total order value:**
 
